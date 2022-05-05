@@ -1,0 +1,155 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="48">
+            <item index="0" class="java.lang.String" itemvalue="*ngif" />
+            <item index="1" class="java.lang.String" itemvalue="(click)" />
+            <item index="2" class="java.lang.String" itemvalue="formcontrolname" />
+            <item index="3" class="java.lang.String" itemvalue="matinput" />
+            <item index="4" class="java.lang.String" itemvalue="[formgroup]" />
+            <item index="5" class="java.lang.String" itemvalue="[src]" />
+            <item index="6" class="java.lang.String" itemvalue="[mat-dialog-close]" />
+            <item index="7" class="java.lang.String" itemvalue="mat-button" />
+            <item index="8" class="java.lang.String" itemvalue="mat-card-avatar" />
+            <item index="9" class="java.lang.String" itemvalue="mat-card-image" />
+            <item index="10" class="java.lang.String" itemvalue="[maxlength]" />
+            <item index="11" class="java.lang.String" itemvalue="[(ngmodel)]" />
+            <item index="12" class="java.lang.String" itemvalue="[disabled]" />
+            <item index="13" class="java.lang.String" itemvalue="mat-menu-item" />
+            <item index="14" class="java.lang.String" itemvalue="[matmenutriggerfor]" />
+            <item index="15" class="java.lang.String" itemvalue="[routerlink]" />
+            <item index="16" class="java.lang.String" itemvalue="routerlink" />
+            <item index="17" class="java.lang.String" itemvalue="*ngfor" />
+            <item index="18" class="java.lang.String" itemvalue="color" />
+            <item index="19" class="java.lang.String" itemvalue="mat-fab" />
+            <item index="20" class="java.lang.String" itemvalue="mat-stroked-button" />
+            <item index="21" class="java.lang.String" itemvalue="(cdkdroplistdropped)" />
+            <item index="22" class="java.lang.String" itemvalue="cdkdrag" />
+            <item index="23" class="java.lang.String" itemvalue="cdkdroplist" />
+            <item index="24" class="java.lang.String" itemvalue="cdkdroplistgroup" />
+            <item index="25" class="java.lang.String" itemvalue="[cdkdroplistdata]" />
+            <item index="26" class="java.lang.String" itemvalue="#userlist" />
+            <item index="27" class="java.lang.String" itemvalue="#likelist" />
+            <item index="28" class="java.lang.String" itemvalue="[cdkdroplistconnectedto]" />
+            <item index="29" class="java.lang.String" itemvalue="mat-dialog-actions" />
+            <item index="30" class="java.lang.String" itemvalue="mat-dialog-close" />
+            <item index="31" class="java.lang.String" itemvalue="mat-dialog-content" />
+            <item index="32" class="java.lang.String" itemvalue="[type]" />
+            <item index="33" class="java.lang.String" itemvalue="[@cardanimator]" />
+            <item index="34" class="java.lang.String" itemvalue="(@cardanimator.done)" />
+            <item index="35" class="java.lang.String" itemvalue="#dislikelist" />
+            <item index="36" class="java.lang.String" itemvalue="mat-dialog-title" />
+            <item index="37" class="java.lang.String" itemvalue="(keyup.enter)" />
+            <item index="38" class="java.lang.String" itemvalue="#newmessage" />
+            <item index="39" class="java.lang.String" itemvalue="#scrollcontainer" />
+            <item index="40" class="java.lang.String" itemvalue="(onaddresschange)" />
+            <item index="41" class="java.lang.String" itemvalue="ngx-google-places-autocomplete" />
+            <item index="42" class="java.lang.String" itemvalue="#placesref" />
+            <item index="43" class="java.lang.String" itemvalue="(keypress)" />
+            <item index="44" class="java.lang.String" itemvalue="(change)" />
+            <item index="45" class="java.lang.String" itemvalue="[hidden]" />
+            <item index="46" class="java.lang.String" itemvalue="matstepperprevious" />
+            <item index="47" class="java.lang.String" itemvalue="matsteppernext" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="53">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="mat-form-field" />
+            <item index="7" class="java.lang.String" itemvalue="mat-label" />
+            <item index="8" class="java.lang.String" itemvalue="mat-dialog-content" />
+            <item index="9" class="java.lang.String" itemvalue="mat-radio-button" />
+            <item index="10" class="java.lang.String" itemvalue="mat-radio-group" />
+            <item index="11" class="java.lang.String" itemvalue="mat-card" />
+            <item index="12" class="java.lang.String" itemvalue="mat-card-actions" />
+            <item index="13" class="java.lang.String" itemvalue="mat-card-content" />
+            <item index="14" class="java.lang.String" itemvalue="mat-card-header" />
+            <item index="15" class="java.lang.String" itemvalue="mat-card-subtitle" />
+            <item index="16" class="java.lang.String" itemvalue="mat-card-title" />
+            <item index="17" class="java.lang.String" itemvalue="mat-icon" />
+            <item index="18" class="java.lang.String" itemvalue="mat-button-toggle" />
+            <item index="19" class="java.lang.String" itemvalue="mat-menu" />
+            <item index="20" class="java.lang.String" itemvalue="sw-card-wrapper" />
+            <item index="21" class="java.lang.String" itemvalue="app-menu" />
+            <item index="22" class="java.lang.String" itemvalue="app-match" />
+            <item index="23" class="java.lang.String" itemvalue="app-block" />
+            <item index="24" class="java.lang.String" itemvalue="mat-error" />
+            <item index="25" class="java.lang.String" itemvalue="mat-dialog-actions" />
+            <item index="26" class="java.lang.String" itemvalue="app-messages-window" />
+            <item index="27" class="java.lang.String" itemvalue="app-messages-list" />
+            <item index="28" class="java.lang.String" itemvalue="ng-container" />
+            <item index="29" class="java.lang.String" itemvalue="app-messages-title-bar" />
+            <item index="30" class="java.lang.String" itemvalue="app-messages-chat" />
+            <item index="31" class="java.lang.String" itemvalue="app-messages-input" />
+            <item index="32" class="java.lang.String" itemvalue="alert" />
+            <item index="33" class="java.lang.String" itemvalue="router-outlet" />
+            <item index="34" class="java.lang.String" itemvalue="ngx-loading" />
+            <item index="35" class="java.lang.String" itemvalue="ng-template" />
+            <item index="36" class="java.lang.String" itemvalue="app-root" />
+            <item index="37" class="java.lang.String" itemvalue="mat-slider" />
+            <item index="38" class="java.lang.String" itemvalue="ng5-slider" />
+            <item index="39" class="java.lang.String" itemvalue="mat-table" />
+            <item index="40" class="java.lang.String" itemvalue="npn-slider" />
+            <item index="41" class="java.lang.String" itemvalue="app-header" />
+            <item index="42" class="java.lang.String" itemvalue="app-footer" />
+            <item index="43" class="java.lang.String" itemvalue="mat-accordion" />
+            <item index="44" class="java.lang.String" itemvalue="mat-expansion-panel" />
+            <item index="45" class="java.lang.String" itemvalue="mat-expansion-panel-header" />
+            <item index="46" class="java.lang.String" itemvalue="mat-panel-title" />
+            <item index="47" class="java.lang.String" itemvalue="mat-panel-description" />
+            <item index="48" class="java.lang.String" itemvalue="li" />
+            <item index="49" class="java.lang.String" itemvalue="agm-map" />
+            <item index="50" class="java.lang.String" itemvalue="agm-marker" />
+            <item index="51" class="java.lang.String" itemvalue="mat-step" />
+            <item index="52" class="java.lang.String" itemvalue="mat-horizontal-stepper" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyGlobalUndefinedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E302" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyRedundantParenthesesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="hotel.models.Booking.objects" />
+          <option value="hotel.models.Room.objects" />
+          <option value="azureml.core" />
+          <option value="train_sentiment_analysis.install" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myAdditionalRequiredHtmlAttributes" value="src" />
+    </inspection_tool>
+  </profile>
+</component>

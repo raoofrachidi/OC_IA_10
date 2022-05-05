@@ -1,0 +1,18 @@
+{
+    "name": "flybot-emulator",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "http://localhost:3978/api/messages",
+            "id": "eb3ed150-cc08-11ec-bda8-f5a00251647a",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\raoof\\Downloads\\OpenClassRooms\\Ingénieur IA\\Cours 10\\flybot-emulator.bot",
+    "overrides": null
+}
