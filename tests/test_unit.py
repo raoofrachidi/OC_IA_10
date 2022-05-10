@@ -4,10 +4,6 @@ from config import DefaultConfig
 
 CONFIG = DefaultConfig()
 
-# Create request
-request = 'looking to go from san francisco to marseille. book me for september 18 to 22. let me know if its more ' \
-          'than 2800 because thats all i can afford '
-
 
 def test_luis_intent():
     """Check LUIS non-regression on *Top intent*
@@ -16,6 +12,10 @@ def test_luis_intent():
     clientRuntime = LUISRuntimeClient(
         CONFIG.LUIS_API_HOST_NAME,
         CognitiveServicesCredentials(CONFIG.LUIS_API_KEY))
+
+    # Create request
+    request = 'looking to go from san francisco to marseille. book me for september 18 to 22. let me know if its more ' \
+              'than 2800 because thats all i can afford '
 
     # Get response
     response = clientRuntime.prediction.resolve(CONFIG.LUIS_APP_ID, query=request)
@@ -32,6 +32,10 @@ def test_luis_origin():
     clientRuntime = LUISRuntimeClient(
         CONFIG.LUIS_API_HOST_NAME,
         CognitiveServicesCredentials(CONFIG.LUIS_API_KEY))
+
+    # Create request
+    request = 'looking to go from san francisco to marseille. book me for september 18 to 22. let me know if its more ' \
+              'than 2800 because thats all i can afford '
 
     # Get response
     response = clientRuntime.prediction.resolve(CONFIG.LUIS_APP_ID, query=request)
@@ -54,6 +58,10 @@ def test_luis_destination():
     clientRuntime = LUISRuntimeClient(
         CONFIG.LUIS_API_HOST_NAME,
         CognitiveServicesCredentials(CONFIG.LUIS_API_KEY))
+
+    # Create request
+    request = 'looking to go from san francisco to marseille. book me for september 18 to 22. let me know if its more ' \
+              'than 2800 because thats all i can afford '
 
     # Get response
     response = clientRuntime.prediction.resolve(CONFIG.LUIS_APP_ID, query=request)
