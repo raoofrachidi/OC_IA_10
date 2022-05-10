@@ -7,6 +7,7 @@ from datatypes_date_time.timex import Timex
 from botbuilder.dialogs import WaterfallDialog, WaterfallStepContext, DialogTurnResult
 from botbuilder.dialogs.prompts import ConfirmPrompt, TextPrompt, PromptOptions
 from botbuilder.core import MessageFactory, BotTelemetryClient, NullTelemetryClient
+from botbuilder.schema import InputHints
 from .cancel_and_help_dialog import CancelAndHelpDialog
 from .date_resolver_dialog import DateResolverDialog
 
@@ -42,9 +43,6 @@ class BookingDialog(CancelAndHelpDialog):
 
         self.add_dialog(text_prompt)
         self.add_dialog(ConfirmPrompt(ConfirmPrompt.__name__))
-        # self.add_dialog(
-        #     DateResolverDialog(DateResolverDialog.__name__, self.telemetry_client)
-        # )
         self.add_dialog(waterfall_dialog)
 
         self.initial_dialog_id = WaterfallDialog.__name__
@@ -155,8 +153,7 @@ class BookingDialog(CancelAndHelpDialog):
         # Offer a YES/NO prompt.
         if booking_details.confirm is None:
             self.telemetry_client.track_trace(name="bot offered YES/NO prompt", properties={"message": "Bot offered "
-                                                                                                       "YES/NO "
-                                                                                                       "Prompt"},
+                                                                                                       "YES/NO Prompt"},
                                               severity=1)
             self.telemetry_client.track_event(name="bot offered YES/NO prompt", properties={"message": "Bot offered "
                                                                                                        "YES/NO Prompt"})
@@ -169,25 +166,28 @@ class BookingDialog(CancelAndHelpDialog):
     async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
         """Complete the interaction and end the dialog."""
         booking_details = step_context.options
+
         entities = {"or_city": booking_details.or_city,
                     "dst_city": booking_details.dst_city,
                     "str_date": booking_details.str_date,
                     "end_date": booking_details.end_date,
                     "budget": booking_details.budget}
 
-        self.telemetry_client.track_trace(name="user confirmation",
-                                          properties={"confirmation_value": step_context.result,
-                                                      "or_city": booking_details.or_city,
-                                                      "dst_city": booking_details.dst_city,
-                                                      "str_date": booking_details.str_date,
-                                                      "end_date": booking_details.end_date,
-                                                      "budget": booking_details.budget})
-
+        # If the BOT is successful
         if step_context.result:
-            booking_details = step_context.options
-            booking_details.confirm = step_context.result
-
+            # Track YES data
+            self.telemetry_client.track_trace("YES answer", entities, "INFO")
             return await step_context.end_dialog(booking_details)
+
+        # If the BOT is NOT successful
+        else:
+            # Send a "sorry" message to the user
+            sorry_msg = "I'm sorry I couldn't help you"
+            prompt_sorry_msg = MessageFactory.text(sorry_msg, sorry_msg, InputHints.ignoring_input)
+            await step_context.context.send_activity(prompt_sorry_msg)
+
+            # Track NO data
+            self.telemetry_client.track_trace("NO answer", entities, "ERROR")
 
         return await step_context.end_dialog()
 

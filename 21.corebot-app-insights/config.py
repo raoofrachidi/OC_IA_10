@@ -15,7 +15,7 @@ class DefaultConfig:
     LUIS_APP_ID = os.environ.get("LuisAppId", "476ae015-dac4-44ce-9dcc-ca1da0154e3b")
     LUIS_API_KEY = os.environ.get("LuisAPIKey", "79b60d071a594d15b2a83e30ac9dc8c4")
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
-    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "chatbotluisoc-authoring.cognitiveservices.azure.com/")
+    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "chatbotluisoc-authoring.cognitiveservices.azure.com")
     APPINSIGHTS_INSTRUMENTATION_KEY = os.environ.get(
-        "AppInsightsInstrumentationKey", "c65bfa7b-7d6b-45f7-b246-d989f5a7a8e3"
+        "AppInsightsInstrumentationKey", "582710b5-a49e-4f08-af01-df54e3bc2ab2"
     )
