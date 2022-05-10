@@ -4,11 +4,16 @@
   "version": "1.0",
   "body": [
     {
+      "type": "Image",
+      "url": "https://drive.google.com/uc?id=145f8iXSmu1HTt-ot4-Mmoo03iq3JpwOE",
+      "size": "stretch"
+    },
+    {
       "type": "TextBlock",
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Welcome to Fly Me!",
+      "text": "Welcome to Fly Me Bot!",
       "wrap": true,
       "maxLines": 0
     },
@@ -21,5 +26,11 @@
       "maxLines": 0
     }
   ],
-  "actions": []
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Get an overview of real-time flight",
+      "url": "https://www.flightradar24.com/"
+    }
+  ]
 }
