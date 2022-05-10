@@ -1,30 +1,85 @@
-# Développez un chatbot pour réserver des vacances
+# CoreBot with Application Insights
 
-Fly Me est une agence qui propose des voyages clé en main pour les particuliers ou les professionnels. 
+Bot Framework v4 core bot sample.
 
-Fly Me a lancé un projet ambitieux de développement d’un chatbot pour aider les utilisateurs à choisir une offre de voyage.
+This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
 
-La première étape de ce projet est de construire un MVP qui aidera les employés de Fly Me à réserver facilement un billet d’avion pour leurs vacances.
+- Use [LUIS](https://www.luis.ai) to implement core AI capabilities
+- Implement a multi-turn conversation using Dialogs
+- Handle user interruptions for such things as `Help` or `Cancel`
+- Prompt for and validate requests for information from the user
+- Use [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/cloudservices) to monitor your bot
 
-La V1 devra pouvoir identifier dans la demande de l’utilisateur les cinq éléments suivants :
-* Ville de départ
-* Ville de destination
-* Date aller souhaitée du vol
-* Date retour souhaitée du vol
-* Budget maximum pour le prix total des billets.
+## Prerequisites
 
-Si un des éléments est manquant, le chatbot devra pouvoir poser les questions pertinentes (en anglais) à l’utilisateur pour comprendre complètement sa demande. Lorsque le chatbot pense avoir compris tous les éléments de la demande de l’utilisateur, il doit pouvoir reformuler la demande de l’utilisateur et lui demander de valider sa compréhension.
+This sample **requires** prerequisites in order to run.
 
-Il faudra t'appuyer sur ce jeu de données : https://www.microsoft.com/en-us/research/project/frames-dataset/#!download.
+### Overview
 
-## Livrables
+This bot uses [LUIS](https://www.luis.ai), an AI based cognitive service, to implement language understanding
+and [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/cloudservices), an extensible Application Performance Management (APM) service for web developers on multiple platforms.
 
-* L’application web chatbot développée à l’aide de la version Python du Microsoft Bot Builder SDK qui permettra à l’utilisateur de communiquer avec le chatbot (interface simple de messagerie style Whatsapp) et qui prendra en entrée les commentaires de l’utilisateur et renverra en sortie les réponses du chatbot ;
-  * Ce livrable permettra de démontrer les fonctionnalités de l’application à des futurs utilisateurs 
-* L’outil de suivi et d’analyse de l’activité du chatbot en production à l’aide d’Azure application insight
-  * Ce livrable permettra de rassurer les managers qui s’inquiètent du suivi de la performance du chatbot en production.
-* Une présentation de la méthodologie sur le pilotage de la performance du modèle en production contenant la description des critères d’évaluation du modèle, le schéma du mécanisme d’évaluation du modèle en production, les modalités de mise à jour du modèle (seuil, fréquence,…) :
-  * Ce livrable vous permettra d’expliciter auprès de la product manager la méthodologie de pilotage et de mise à jour opérationnelle du modèle. 
-* Les scripts développés stockés sur Github permettant l’exécution du pipeline complet pour générer l’application web chatbot, entraîner et évaluer le modèle :
-  * Ce livrable vous servira à montrer le caractère “industrialisable” de votre travail.
-* Une présentation Powerpoint pour présenter votre travail. 
+### Create a LUIS Application to enable language understanding
+
+LUIS language model setup, training, and application configuration steps can be found [here](https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&tabs=cs).
+
+If you wish to create a LUIS application via the CLI, these steps can be found in the [README-LUIS.md](README-LUIS.md).
+
+### Add Application Insights service to enable the bot monitoring
+
+Application Insights resource creation steps can be found [here](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
+
+You must include the instrumentation key in the `config.py` file, as well is in the designated field in your Azure Bot resource.
+
+### Add Activity and Personal Information logging for Application Insights
+To log activity and personal information, extra code is needed in `app.py` after the creation of the telemetry client. This code is *already present* in the sample, but must be unconmmented in order to function. It is important to note that due to privacy concerns, in a real-world application you **must** obtain user consent prior to logging this information.
+
+The required code is as follows:
+```python
+TELEMETRY_LOGGER_MIDDLEWARE = TelemetryLoggerMiddleware(telemetry_client=TELEMETRY_CLIENT, log_personal_information=True)
+ADAPTER.use(TELEMETRY_LOGGER_MIDDLEWARE)
+```
+
+## To try this sample
+
+- Clone the repository
+```bash
+git clone https://github.com/Microsoft/botbuilder-samples.git
+```
+- In a terminal, navigate to `botbuilder-samples\samples\python\21.corebot-app-insights` folder
+- Activate your desired virtual environment
+- In the terminal, type `pip install -r requirements.txt`
+- Run your bot with `python app.py`
+
+## Testing the bot using Bot Framework Emulator
+
+[Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
+
+- Install the latest Bot Framework Emulator from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
+
+### Connect to the bot using Bot Framework Emulator
+
+- Launch Bot Framework Emulator
+- File -> Open Bot
+- Enter a Bot URL of `http://localhost:3978/api/messages`
+
+## Deploy the bot to Azure
+
+To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+
+## Further reading
+
+- [Bot Framework Documentation](https://docs.botframework.com)
+- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
+- [Dialogs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0)
+- [Gathering Input Using Prompts](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-prompts?view=azure-bot-service-4.0&tabs=csharp)
+- [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0)
+- [Azure Bot Service Introduction](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
+- [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Azure Portal](https://portal.azure.com)
+- [Language Understanding using LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/)
+- [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
+- [Application insights Overview](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+- [Getting Started with Application Insights](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Getting-Started-with-Application-Insights-for-ASP.NET-Core)
+- [Filtering and preprocessing telemetry in the Application Insights SDK](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling)
