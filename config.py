@@ -10,8 +10,8 @@ class DefaultConfig:
     """Configuration for the bot."""
 
     PORT = 3978
-    APP_ID = os.environ.get("MicrosoftAppId", "d924c59c-d9ab-4794-9232-9db7643a8907")
-    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "PasswordForFlyBot1.2.3")
+    APP_ID = os.environ.get("MicrosoftAppId", "39d10cb0-4b93-4730-be34-dd5fda4249fc")
+    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
     LUIS_APP_ID = os.environ.get("LuisAppId", "476ae015-dac4-44ce-9dcc-ca1da0154e3b")
     LUIS_API_KEY = os.environ.get("LuisAPIKey", "79b60d071a594d15b2a83e30ac9dc8c4")
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
