@@ -152,11 +152,6 @@ class BookingDialog(CancelAndHelpDialog):
 
         # Offer a YES/NO prompt.
         if booking_details.confirm is None:
-            self.telemetry_client.track_trace(name="bot offered YES/NO prompt", properties={"message": "Bot offered "
-                                                                                                       "YES/NO Prompt"},
-                                              severity=1)
-            self.telemetry_client.track_event(name="bot offered YES/NO prompt", properties={"message": "Bot offered "
-                                                                                                       "YES/NO Prompt"})
             return await step_context.prompt(
                 ConfirmPrompt.__name__, PromptOptions(prompt=MessageFactory.text(msg))
             )
