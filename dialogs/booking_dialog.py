@@ -7,7 +7,6 @@ from datatypes_date_time.timex import Timex
 from botbuilder.dialogs import WaterfallDialog, WaterfallStepContext, DialogTurnResult
 from botbuilder.dialogs.prompts import ConfirmPrompt, TextPrompt, PromptOptions
 from botbuilder.core import MessageFactory, BotTelemetryClient, NullTelemetryClient
-from botbuilder.schema import InputHints
 from .cancel_and_help_dialog import CancelAndHelpDialog
 from .date_resolver_dialog import DateResolverDialog
 
@@ -16,9 +15,9 @@ class BookingDialog(CancelAndHelpDialog):
     """Flight booking implementation."""
 
     def __init__(
-            self,
-            dialog_id: str = None,
-            telemetry_client: BotTelemetryClient = NullTelemetryClient(),
+        self,
+        dialog_id: str = None,
+        telemetry_client: BotTelemetryClient = NullTelemetryClient(),
     ):
         super(BookingDialog, self).__init__(
             dialog_id or BookingDialog.__name__, telemetry_client
@@ -48,7 +47,7 @@ class BookingDialog(CancelAndHelpDialog):
         self.initial_dialog_id = WaterfallDialog.__name__
 
     async def destination_step(
-            self, step_context: WaterfallStepContext
+        self, step_context: WaterfallStepContext
     ) -> DialogTurnResult:
         """Prompt for destination."""
         booking_details = step_context.options

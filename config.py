@@ -10,12 +10,12 @@ class DefaultConfig:
     """Configuration for the bot."""
 
     PORT = 3978
-    APP_ID = os.environ.get("MicrosoftAppId", "20e4dbed-7bb4-4b56-afa5-29bfd17b2616")
-    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "AtLeastSixteenCharacters_0")
-    LUIS_APP_ID = os.environ.get("LuisAppId", "476ae015-dac4-44ce-9dcc-ca1da0154e3b")
-    LUIS_API_KEY = os.environ.get("LuisAPIKey", "79b60d071a594d15b2a83e30ac9dc8c4")
+    APP_ID = os.environ.get("MicrosoftAppId", "")
+    APP_PASSWORD = os.environ.get("MicrosoftAppPassword", "")
+    LUIS_APP_ID = os.environ.get("LuisAppId", "e74cfb8e-ebf7-4c7a-9ffa-6204da13dc26")
+    LUIS_API_KEY = os.environ.get("LuisAPIKey", "54bc33c0ca9149cdb8dac60dbdaa66c4")
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
-    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "chatbotluisoc-authoring.cognitiveservices.azure.com")
+    LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "westeurope.api.cognitive.microsoft.com")
     APPINSIGHTS_INSTRUMENTATION_KEY = os.environ.get(
-        "AppInsightsInstrumentationKey", "e3919f29-1500-4f1b-a174-1f5fc46b8715"
+        "AppInsightsInstrumentationKey", "0123fdc1-f160-4f29-903f-13f64355c65e"
     )

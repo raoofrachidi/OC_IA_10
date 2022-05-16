@@ -20,7 +20,7 @@
     {
       "type": "TextBlock",
       "size": "default",
-      "isSubtle": "true",
+      "isSubtle": true,
       "text": "I'm Fly Me virtual assistant and I'm here to help you book a flight for your next vacation. Say 'Hi' to start.",
       "wrap": true,
       "maxLines": 0

@@ -7,7 +7,6 @@ from botbuilder.core import IntentScore, TopIntent, TurnContext
 
 from booking_details import BookingDetails
 
-
 class Intent(Enum):
     BOOK_FLIGHT = "BookFlightIntent"
 
