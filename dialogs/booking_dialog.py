@@ -7,6 +7,7 @@ from datatypes_date_time.timex import Timex
 from botbuilder.dialogs import WaterfallDialog, WaterfallStepContext, DialogTurnResult
 from botbuilder.dialogs.prompts import ConfirmPrompt, TextPrompt, PromptOptions
 from botbuilder.core import MessageFactory, BotTelemetryClient, NullTelemetryClient
+from botbuilder.schema import InputHints
 from .cancel_and_help_dialog import CancelAndHelpDialog
 from .date_resolver_dialog import DateResolverDialog
 
@@ -175,14 +176,13 @@ class BookingDialog(CancelAndHelpDialog):
 
         # If the BOT is NOT successful
         else:
+            # Send a "sorry" message to the user
+            sorry_msg = "I'm sorry I couldn't help you"
+            prompt_sorry_msg = MessageFactory.text(sorry_msg, sorry_msg, InputHints.ignoring_input)
+            await step_context.context.send_activity(prompt_sorry_msg)
+
             # Track NO data
             self.telemetry_client.track_trace("NO answer", entities, "ERROR")
-            return await step_context.prompt(
-                TextPrompt.__name__,
-                PromptOptions(
-                    prompt=MessageFactory.text("I'm sorry I couldn't help you")
-                ),
-            )
 
         return await step_context.end_dialog()
 
