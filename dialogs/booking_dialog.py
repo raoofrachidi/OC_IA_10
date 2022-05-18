@@ -176,13 +176,12 @@ class BookingDialog(CancelAndHelpDialog):
 
         # If the BOT is NOT successful
         else:
+            # Track NO data
+            self.telemetry_client.track_trace("NO answer", entities, "ERROR")
             # Send a "sorry" message to the user
             sorry_msg = "I'm sorry I couldn't help you"
             prompt_sorry_msg = MessageFactory.text(sorry_msg, sorry_msg, InputHints.ignoring_input)
             await step_context.context.send_activity(prompt_sorry_msg)
-
-            # Track NO data
-            self.telemetry_client.track_trace("NO answer", entities, "ERROR")
 
         return await step_context.end_dialog()
 
